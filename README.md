@@ -106,6 +106,3 @@ export default function() {
 * `<TableHeaderColumn>.columnInteraction` - handler for when clicking on a header column. Params: `(TapEvent, colIndex)`
 
 
-
-(c) Copyright 2016 Wildlife Design Inc.
-
