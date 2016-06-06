@@ -1,0 +1,11 @@
+{
+    "presets": ["es2015", "stage-0", "react"],
+    "plugins": [
+        "syntax-decorators",
+        "transform-decorators",
+        "transform-object-assign",
+        "syntax-class-properties",
+        "transform-class-properties",
+        "babel-plugin-lodash"
+    ]
+}

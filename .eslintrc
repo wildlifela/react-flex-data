@@ -1,0 +1,32 @@
+
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "extends": [
+        "standard-react",
+        "plugin:eslint-plugin-import/warnings",
+        "plugin:eslint-plugin-import/errors"
+    ],
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "comma-dangle": 0,
+        "no-console": 0,
+        "object-curly-spacing": 0,
+        "semi": [2, "always"],
+        "semi-spacing": [2, { "before": false, "after": true }],
+        "no-unused-vars": [2, { "vars": "local", "args": "after-used", "varsIgnorePattern": "React|FB" }],
+        "no-use-before-define": [2, "nofunc"],
+        "no-spaced-func": 2,
+        "key-spacing": [2, { "beforeColon": false, "afterColon": true }],
+        "space-before-function-paren": [2, "never"],
+        "array-bracket-spacing": 0,
+        "indent": 0,
+        "react/jsx-indent": 0
+    }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "react-flex-data",
+  "version": "1.0.0",
+  "description": "Simple minimal flex only table implementation",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src/ --out-dir lib/",
+    "dev": "babel src/ --out-dir lib/ --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "react",
+    "tables",
+    "flex",
+    "data",
+    "minimal"
+  ],
+  "author": "WILDLIFE.LA",
+  "license": "ISC",
+  "homepage": "",
+  "devDependencies": {
+    "babel-core": "6.3.26",
+    "babel-eslint": "^6.0.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-lodash": "^2.2.2",
+    "babel-plugin-react-transform": "^2.0.0-beta1",
+    "babel-plugin-syntax-class-properties": "^6.3.13",
+    "babel-plugin-syntax-decorators": "^6.1.18",
+    "babel-plugin-syntax-jsx": "^6.1.18",
+    "babel-plugin-syntax-object-rest-spread": "^6.1.18",
+    "babel-plugin-transform-class-properties": "^6.3.13",
+    "babel-plugin-transform-decorators": "^6.1.18",
+    "babel-plugin-transform-object-assign": "^6.3.13",
+    "babel-plugin-transform-object-rest-spread": "^6.1.18",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-runtime": "^6.2.0",
+    "envify": "^3.4.0",
+    "eslint": "^2.7.0",
+    "eslint-config-standard-react": "^2.3.0",
+    "eslint-plugin-import": "^1.4.0",
+    "eslint-plugin-react": "^4.3.0",
+    "precss": "^1.4.0",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1"
+  },
+  "dependencies": {
+    "inline-style-prefixer": "^1.0.4",
+    "lodash": "^4.13.1",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2"
+  }
+}
