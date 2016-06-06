@@ -36,6 +36,9 @@ npm install react-flex-data
 
 ```javascript
 import {Table, TableHeader, TableHeaderColumn, TableBody, TableRow, TableRowColumn} from 'react-flex-data';
+import _ from 'lodash';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 
 const DATA = [
