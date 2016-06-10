@@ -1,6 +1,6 @@
 {
   "name": "react-flex-data",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple minimal flex only table implementation",
   "main": "index.js",
   "scripts": {
