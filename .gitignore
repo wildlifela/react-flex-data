@@ -44,13 +44,7 @@ psd/
 log/
 data/*.sqlite
 
-public/js/*.js
-public/js/*.json
-public/js/*.map
-public/css/*.css
-public/css/*.map
-public/images
-public/*.html
+lib/
 
 *.orig
 

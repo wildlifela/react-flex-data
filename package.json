@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src/ --out-dir lib/",
-    "dev": "babel src/ --out-dir lib/ --watch"
+    "clean": "rimraf lib",
+    "dev": "babel src/ --out-dir lib/ --watch",
+    "prepublish": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
@@ -46,7 +48,8 @@
     "eslint-plugin-react": "^4.3.0",
     "precss": "^1.4.0",
     "react-transform-catch-errors": "^1.0.0",
-    "react-transform-hmr": "^1.0.1"
+    "react-transform-hmr": "^1.0.1",
+    "rimraf": "^2.5.2"
   },
   "dependencies": {
     "inline-style-prefixer": "^1.0.4",
