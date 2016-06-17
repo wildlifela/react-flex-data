@@ -14,14 +14,14 @@ const BASE_STYLE = {
 class Table extends Component {
     render() {
 
-        const {style} = this.props;
+        const {style, tableClass} = this.props;
         const compStyle = {
             ...BASE_STYLE,
             ...style
         };
 
         return ( 
-            <div style={prefixer.prefix(compStyle)}>
+            <div className={tableClass} style={prefixer.prefix(compStyle)}>
                 {passProps(this.props.children, this.props)}
             </div>
         );  
@@ -38,7 +38,8 @@ Table.propTypes = {
         PropTypes.string,
         PropTypes.bool
     ]),
-    style: PropTypes.object
+    style: PropTypes.object,
+    tableClass: PropTypes.string
 };
 
 

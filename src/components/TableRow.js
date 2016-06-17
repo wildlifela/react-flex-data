@@ -30,7 +30,7 @@ class TableRow extends Component {
 
     render() {
 
-        const {style, childIndex, rowInteraction} = this.props;
+        const {style, childIndex, rowInteraction, rowClass} = this.props;
         const {altColor} = this.state;
 
 
@@ -42,7 +42,7 @@ class TableRow extends Component {
         };
 
         return ( 
-            <div style={prefixer.prefix(compStyle)} onTouchTap={this.onInteraction(childIndex)}>
+            <div className={rowClass} style={prefixer.prefix(compStyle)} onTouchTap={this.onInteraction(childIndex)}>
                 {passProps(this.props.children, this.props)}
             </div>
         );  
@@ -73,7 +73,7 @@ TableRow.propTypes = {
 
 TableRow.defaultProps = {
     rowInteraction: false,
-    style: {}
+    style: {},
 };
 
 

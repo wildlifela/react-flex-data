@@ -12,7 +12,7 @@ class TableBody extends Component {
 
     render() {
 
-        const {style} = this.props;
+        const {style, bodyClass} = this.props;
 
         const compStyle = {
             ...BASE_STYLE,
@@ -20,7 +20,7 @@ class TableBody extends Component {
         };
 
         return ( 
-            <div style={prefixer.prefix(compStyle)}>
+            <div className={bodyClass} style={prefixer.prefix(compStyle)}>
                 {passProps(this.props.children, this.props)}
             </div>
         );  
@@ -30,7 +30,8 @@ class TableBody extends Component {
 }
 
 TableBody.propTypes = {
-    style: PropTypes.object
+    style: PropTypes.object,
+    bodyClass: PropTypes.string
 };
 
 TableBody.defaultProps = {

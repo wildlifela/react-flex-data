@@ -23,7 +23,7 @@ class TableRowColumn extends Component {
 
     render() {
 
-        const {rowHeight, alignCellContent, columnRatio, style, cellStyle, columnInteraction, childIndex } = this.props;
+        const {rowHeight, alignCellContent, columnRatio, style, cellStyle, columnInteraction, childIndex, columnClass } = this.props;
 
         const compStyle = {
             ...BASE_STYLE,
@@ -42,7 +42,7 @@ class TableRowColumn extends Component {
 
 
         return ( 
-            <div style={prefixer.prefix(compStyle)} onTouchTap={this.onInteraction(childIndex)}>
+            <div className={columnClass} style={prefixer.prefix(compStyle)} onTouchTap={this.onInteraction(childIndex)}>
                   <div style={prefixer.prefix(compCellStyle)}>{this.props.children}</div>
             </div>
         );  
@@ -68,15 +68,14 @@ TableRowColumn.propTypes = {
         PropTypes.bool
     ]),
     style: PropTypes.object,
-    cellStyle: PropTypes.object
+    cellStyle: PropTypes.object,
+    columnClass: PropTypes.string,
 };
 
 TableRowColumn.defaultProps = {
     alignCellContent: 'flex-start',
     style: {},
-    cellStyle: {}
-
-
+    cellStyle: {},
 };
 
 
