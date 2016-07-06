@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
-import passProps, {passColRatio} from '../tools/passProps';
 import prefixer from '../tools/prefixer';
+
 
 
 
@@ -12,6 +12,11 @@ const BASE_STYLE = {
 
 class TableRow extends Component {
 
+    static contextTypes = {
+        altColor: PropTypes.string,
+        childIndex: PropTypes.number
+    }
+
     constructor() {
         super(...arguments);
         this.state = {
@@ -20,18 +25,32 @@ class TableRow extends Component {
 
     }
 
-    componentWillMount() {
-        const {childIndex, altColor} = this.props;
+    updateAltColor(props = this.props, context = this.context) {
+        const {altColor, childIndex} = context;
         this.setState({
             altColor: altColor && childIndex%2 === 1 ? altColor : false
         });
+    }
 
+    componentWillMount() {
+        this.updateAltColor();
+    }
+
+    componentDidMount() {
+        console.log(this.context);
+    }
+
+
+
+    componentWillReceiveProps(nextProps, nextState, nextContext) {
+        this.updateAltColor(nextProps, nextContext);
     }
 
     render() {
 
         const {style, childIndex, rowInteraction, rowClass} = this.props;
         const {altColor} = this.state;
+
 
 
         const compStyle = {
@@ -43,7 +62,7 @@ class TableRow extends Component {
 
         return ( 
             <div className={rowClass} style={prefixer.prefix(compStyle)} onTouchTap={this.onInteraction(childIndex)}>
-                {passProps(this.props.children, this.props)}
+                {this.props.children}
             </div>
         );  
        

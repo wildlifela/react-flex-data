@@ -1,5 +1,4 @@
 import React, {cloneElement, Children, Component, PropTypes} from 'react';
-import passProps from '../tools/passProps';
 import prefixer from '../tools/prefixer';
 
 
@@ -12,6 +11,29 @@ const BASE_STYLE = {
 };
 
 class Table extends Component {
+
+    static childContextTypes = {
+        rowHeight: PropTypes.number,
+        columnRatio: PropTypes.array,
+        altColor: PropTypes.string
+    }
+
+    getChildContext() {
+
+        const {
+            rowHeight,
+            columnRatio,
+            altColor,
+        } = this.props;
+
+        return {
+            rowHeight,
+            columnRatio,
+            altColor
+        };
+    }
+
+
     render() {
 
         const {style, tableClass} = this.props;
@@ -22,7 +44,7 @@ class Table extends Component {
 
         return ( 
             <div className={tableClass} style={prefixer.prefix(compStyle)}>
-                {passProps(this.props.children, this.props)}
+                {this.props.children}
             </div>
         );  
 

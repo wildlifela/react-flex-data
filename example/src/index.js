@@ -3,12 +3,15 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Table, TableHeader, TableHeaderColumn, TableBody, TableRow, TableRowColumn} from '../../index';
 import _ from 'lodash';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 
 
 
 const DATA = [
     {
-        name: 'Han',
+        name: 'Ha1n',
         class: 'Rogue',
         skills: 'Piloting, Marksmanship, Guile, Subterfuge',
         primary: 'Blaster'
