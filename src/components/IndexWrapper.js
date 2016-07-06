@@ -1,4 +1,4 @@
-import React, { Component, PropTypes} from 'react';
+import React, { isValidElement, Component, PropTypes} from 'react';
 
 
 
@@ -13,9 +13,7 @@ class IndexWrapper extends Component {
         };
     }
     render() {
-        console.log('IndexWrapper Props', this.props);
-        const content = this.props.children || false;
-
+        const content = isValidElement(this.props.children) ? this.props.children : <span>{this.props.children}</span>;
         return content;
     }
 }
