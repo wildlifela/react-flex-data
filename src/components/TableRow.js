@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Children, Component, PropTypes} from 'react';
+import IndexWrapper from './IndexWrapper';
 import prefixer from '../tools/prefixer';
 
 
@@ -36,12 +37,6 @@ class TableRow extends Component {
         this.updateAltColor();
     }
 
-    componentDidMount() {
-        console.log(this.context);
-    }
-
-
-
     componentWillReceiveProps(nextProps, nextState, nextContext) {
         this.updateAltColor(nextProps, nextContext);
     }
@@ -51,8 +46,7 @@ class TableRow extends Component {
         const {style, childIndex, rowInteraction, rowClass} = this.props;
         const {altColor} = this.state;
 
-
-
+        
         const compStyle = {
             ...BASE_STYLE,
             ...style,
@@ -62,7 +56,12 @@ class TableRow extends Component {
 
         return ( 
             <div className={rowClass} style={prefixer.prefix(compStyle)} onTouchTap={this.onInteraction(childIndex)}>
-                {this.props.children}
+                {Children.map(this.props.children, (Column, i) => {
+                    return <IndexWrapper childIndex={i}>
+                        {Column}
+                    </IndexWrapper>;
+                })}
+
             </div>
         );  
        

@@ -42,7 +42,7 @@ class ExampleTable extends Component {
         return (
             <Table
                 rowHeight={25}
-                columnRatio={[2,2,4,2]}
+                columnRatio={[2,2,4,1]}
                 altColor="#cfcfcf"
             >
                 <TableHeader>

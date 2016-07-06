@@ -23,13 +23,16 @@ class TableRowColumn extends Component {
 
     static contextTypes = {
         columnRatio: PropTypes.array,
-        rowHeight: PropTypes.number
+        rowHeight: PropTypes.number,
+        childIndex: PropTypes.number
     }
 
     render() {
 
-        const {alignCellContent, style, cellStyle, columnInteraction, childIndex, columnClass } = this.props;
-        const {rowHeight, columnRatio} = this.context;
+        const {alignCellContent, style, cellStyle, columnInteraction, columnClass } = this.props;
+        const {rowHeight, columnRatio, childIndex} = this.context;
+
+        console.log(childIndex);
 
         const compStyle = {
             ...BASE_STYLE,
