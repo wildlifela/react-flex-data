@@ -13,7 +13,10 @@ class IndexWrapper extends Component {
         };
     }
     render() {
-        return this.props.children;
+        console.log('IndexWrapper Props', this.props);
+        const content = this.props.children || false;
+
+        return content;
     }
 }
 

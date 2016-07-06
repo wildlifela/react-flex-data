@@ -32,8 +32,7 @@ class TableRowColumn extends Component {
         const {alignCellContent, style, cellStyle, columnInteraction, columnClass } = this.props;
         const {rowHeight, columnRatio, childIndex} = this.context;
 
-        console.log(childIndex);
-
+     
         const compStyle = {
             ...BASE_STYLE,
             ...style,
