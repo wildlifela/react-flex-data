@@ -1,5 +1,5 @@
 import React, {Children, Component, PropTypes} from 'react';
-
+import IndexWrapper from './IndexWrapper'
 import prefixer from '../tools/prefixer';
 
 const BASE_STYLE = {
@@ -7,22 +7,6 @@ const BASE_STYLE = {
     flexDirection: 'column'
 };
 
-
-
-class RowWrapper extends Component {
-    static childContextTypes = {
-        childIndex: PropTypes.number
-    }
-    getChildContext() {
-        const {childIndex} = this.props;
-        return {
-            childIndex
-        };
-    }
-    render() {
-        return this.props.children;
-    }
-}
 
 
 
@@ -40,9 +24,9 @@ class TableBody extends Component {
         return ( 
             <div className={bodyClass} style={prefixer.prefix(compStyle)}>
                 {Children.map(this.props.children, (Row, i) => {
-                    return <RowWrapper childIndex={i}>
+                    return <IndexWrapper childIndex={i}>
                         {Row}
-                    </RowWrapper>;
+                    </IndexWrapper>;
                 })}
             </div>
         );  
