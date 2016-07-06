@@ -1,31 +1,15 @@
 {
-  "name": "react-flex-data",
-  "version": "1.0.7",
-  "description": "Simple minimal flex only table implementation",
+  "name": "react-flex-data-example",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src/ --out-dir lib/",
-    "clean": "rimraf lib",
-    "dev": "babel src/ --out-dir lib/ --watch",
-    "prepublish": "npm run clean && npm run build"
+    "dev:server": "browser-sync start -s -f lib/*.*",
+    "dev:build": "NODE_ENV=development webpack --watch --config ./webpack.config.dev.js",
+    "dev": "npm-run-all --parallel dev:*"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wildlifela/react-flex-data"
-  },
-  "keywords": [
-    "react",
-    "tables",
-    "flex",
-    "data",
-    "minimal"
-  ],
-  "files": [
-    "lib"
-  ],
-  "author": "WILDLIFE.LA",
+  "author": "",
   "license": "ISC",
-  "homepage": "",
   "devDependencies": {
     "babel-core": "6.3.26",
     "babel-eslint": "^6.0.2",
@@ -46,19 +30,20 @@
     "babel-runtime": "^6.2.0",
     "envify": "^3.4.0",
     "eslint": "^2.7.0",
+    "eslint-config-rackt": "^1.1.1",
     "eslint-config-standard-react": "^2.3.0",
     "eslint-plugin-import": "^1.4.0",
     "eslint-plugin-react": "^4.3.0",
-    "precss": "^1.4.0",
-    "react-transform-catch-errors": "^1.0.0",
-    "react-transform-hmr": "^1.0.1",
-    "rimraf": "^2.5.2"
+    "npm-run-all": "^2.3.0",
+    "postcss-loader": "^0.8.0",
+    "transform-loader": "^0.2.3",
+    "webpack": "^1.12.6"
   },
   "dependencies": {
-    "inline-style-prefixer": "^1.0.4",
+    "inline-style-prefixer": "^2.0.0",
     "lodash": "^4.13.1",
-    "react": "^15.0.2",
-    "react-dom": "^15.0.2",
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0",
     "react-tap-event-plugin": "^1.0.0"
   }
 }
