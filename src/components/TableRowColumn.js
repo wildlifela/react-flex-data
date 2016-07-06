@@ -21,9 +21,15 @@ const CELL_BASE_STYLE = {
 
 class TableRowColumn extends Component {
 
+    static contextTypes = {
+        columnRatio: PropTypes.array,
+        rowHeight: PropTypes.number
+    }
+
     render() {
 
-        const {rowHeight, alignCellContent, columnRatio, style, cellStyle, columnInteraction, childIndex, columnClass } = this.props;
+        const {alignCellContent, style, cellStyle, columnInteraction, childIndex, columnClass } = this.props;
+        const {rowHeight, columnRatio} = this.context;
 
         const compStyle = {
             ...BASE_STYLE,
