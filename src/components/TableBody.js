@@ -1,4 +1,5 @@
-import React, {Children, Component, PropTypes} from 'react';
+import PropTypes from 'prop-types';
+import React, { Children, Component } from 'react';
 import IndexWrapper from './IndexWrapper'
 import prefixer from '../tools/prefixer';
 
@@ -10,29 +11,25 @@ const BASE_STYLE = {
 
 
 
-class TableBody extends Component {
+function TableBody(props) {
 
-    render() {
+    const {style, bodyClass} = props;
 
-        const {style, bodyClass} = this.props;
+    const compStyle = {
+        ...BASE_STYLE,
+        ...style
+    };
 
-        const compStyle = {
-            ...BASE_STYLE,
-            ...style
-        };
-
-        return ( 
-            <div className={bodyClass} style={prefixer.prefix(compStyle)}>
-                {Children.map(this.props.children, (Row, i) => {
-                    return <IndexWrapper childIndex={i}>
-                        {Row}
-                    </IndexWrapper>;
-                })}
-            </div>
-        );  
-       
-    }
-
+    return (
+        <div className={bodyClass} style={prefixer.prefix(compStyle)}>
+            {Children.map(props.children, (Row, i) => {
+                return <IndexWrapper childIndex={i}>
+                    {Row}
+                </IndexWrapper>;
+            })}
+        </div>
+    );  
+   
 }
 
 TableBody.propTypes = {

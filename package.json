@@ -1,6 +1,6 @@
 {
     "name": "react-flex-data",
-    "version": "1.1.2",
+    "version": "2.0.1",
     "description": "Simple minimal flex only table implementation",
     "main": "index.js",
     "scripts": {
@@ -28,6 +28,10 @@
     "author": "WILDLIFE.LA",
     "license": "ISC",
     "homepage": "",
+    "peerDependencies": {
+        "react": "16.x.x",
+        "react-dom": "16.x.x"
+    },
     "devDependencies": {
         "babel-core": "6.3.26",
         "babel-eslint": "^6.0.2",
@@ -58,9 +62,6 @@
     },
     "dependencies": {
         "inline-style-prefixer": "^1.0.4",
-        "lodash": "^4.13.1",
-        "react": "^15.0.2",
-        "react-dom": "^15.0.2",
-        "react-tap-event-plugin": "^1.0.0"
+        "lodash": "^4.13.1"
     }
 }

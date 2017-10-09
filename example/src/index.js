@@ -4,7 +4,6 @@ import {render} from 'react-dom';
 import {Table, TableHeader, TableHeaderColumn, TableBody, TableRow, TableRowColumn} from '../../index';
 import _ from 'lodash';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
 
 
 

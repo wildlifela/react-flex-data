@@ -1,4 +1,5 @@
-import React, {Children, Component, PropTypes} from 'react';
+import PropTypes from 'prop-types';
+import React, { Children, Component } from 'react';
 import IndexWrapper from './IndexWrapper';
 import prefixer from '../tools/prefixer';
 

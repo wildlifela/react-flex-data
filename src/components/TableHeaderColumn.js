@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import TableRowColumn from './TableRowColumn';
 
 
@@ -7,12 +8,12 @@ const BASE_STYLE = {
 };
 
 
-class TableHeaderColumn extends Component {
-    render() {
-        return <TableRowColumn  {...this.props} style={{...BASE_STYLE}}>
-            {this.props.children}
-        </TableRowColumn>;
-    }
+function TableHeaderColumn(props) {
+    return (
+        <TableRowColumn  {...props} style={{...BASE_STYLE}}>
+            {props.children}
+        </TableRowColumn>
+    );
 }
 
 TableHeaderColumn.propTypes = {

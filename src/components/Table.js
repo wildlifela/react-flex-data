@@ -1,4 +1,5 @@
-import React, {cloneElement, Children, Component, PropTypes} from 'react';
+import PropTypes from 'prop-types';
+import React, { cloneElement, Children, Component } from 'react';
 import prefixer from '../tools/prefixer';
 
 
