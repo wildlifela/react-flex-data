@@ -2,7 +2,7 @@
     "name": "react-flex-data",
     "version": "2.0.1",
     "description": "Simple minimal flex only table implementation",
-    "main": "index.js",
+    "main": "lib/index.js",
     "scripts": {
         "build": "babel src/ --out-dir lib/",
         "clean": "rimraf lib",
